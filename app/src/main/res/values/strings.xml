@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Feelings, My Music</string>
+    <string name="credits_icons">Icons and vector made by www.flaticon.com</string>
+    <string name="welcome_text">How are you today?</string>
+    <string name="welcome_text2">Tell me about you today!</string>
+    <string name="welcome_text3">What\'s up?</string>
+    <string name="happy_category">I\'m great today!</string>
+    <string name="sad_category">Not so well</string>
+    <string name="angry_category">No questions, please!!!</string>
+    <string name="inexpressive_category">Whatever...</string>
+    <string name="happy_topbar">Happy! :D</string>
+    <string name="sad_topbar">Sad :(</string>
+    <string name="angry_topbar">Angry >:(</string>
+    <string name="inexpressive_topbar">Normal day? :/</string>
+    <string name="listening_message">You\'re now listening:</string>
+
+</resources>

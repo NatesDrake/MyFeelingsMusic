@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Feelings, My Music</string>
+    <string name="credits_icons">Ícones e vetores de www.flaticon.com</string>
+    <string name="welcome_text">Como você está hoje?</string>
+    <string name="welcome_text2">Fale sobre seu dia!</string>
+    <string name="welcome_text3">E aí?</string>
+    <string name="happy_category">Eu estou ótimo!</string>
+    <string name="sad_category">Tô na bad</string>
+    <string name="angry_category">Não fale comigo!!!</string>
+    <string name="inexpressive_category">Tanto faz...</string>
+    <string name="happy_topbar">Feliz! :D</string>
+    <string name="sad_topbar">Triste :(</string>
+    <string name="angry_topbar">Com raiva >:(</string>
+    <string name="inexpressive_topbar">Dia normal? :/</string>
+    <string name="listening_message">Você está ouvindo:</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/album_cover_image"
+        android:layout_width="65dp"
+        android:layout_height="65dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/song_name_text_view"
+            style="@style/SongTitleStyle"
+            tools:text="You Make My Dreams" />
+
+        <TextView
+            android:id="@+id/artist_text_view"
+            style="@style/OtherSongInfoStyle"
+            tools:text="Hall e Oates" />
+
+        <TextView
+            android:id="@+id/album_text_view"
+            style="@style/OtherSongInfoStyle"
+            tools:text="Voices" />
+
+    </LinearLayout>
+
+</LinearLayout>
