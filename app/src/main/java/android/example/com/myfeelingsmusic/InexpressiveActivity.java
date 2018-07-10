@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,6 +26,10 @@ public class InexpressiveActivity extends AppCompatActivity {
         TextView topBarMessage = findViewById(R.id.header_category);
         topBarMessage.setText(getResources().getString(R.string.inexpressive_topbar));
         topBarMessage.setBackgroundResource(R.drawable.rect_inexpressive_topbar);
+
+        Button buttonBottom = findViewById(R.id.playing_now_button);
+        buttonBottom.setText(getResources().getString(R.string.play_now));
+        buttonBottom.setBackgroundResource(R.drawable.rect_inexpressive_topbar);
 
         // Create a list of words
         final ArrayList<MusicInfo> musicInfo = new ArrayList<>();
@@ -78,6 +83,14 @@ public class InexpressiveActivity extends AppCompatActivity {
             }
         });
 
+        buttonBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextActivity = new Intent(InexpressiveActivity.this, ReproduceActivity.class);
+                nextActivity.putExtra("last_activity", "inexpressive");
+                startActivity(nextActivity);
+            }
+        });
     }
 
 }

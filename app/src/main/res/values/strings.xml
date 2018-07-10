@@ -13,5 +13,7 @@
     <string name="angry_topbar">Angry >:(</string>
     <string name="inexpressive_topbar">Normal day? :/</string>
     <string name="listening_message">You\'re now listening:</string>
+    <string name="play_now">Playing now</string>
+    <string name="playlist_button">Playlist</string>
 
 </resources>

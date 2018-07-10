@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +27,11 @@ public class HappyActivity extends AppCompatActivity {
         topBarMessage.setText(getResources().getString(R.string.happy_topbar));
         topBarMessage.setBackgroundResource(R.drawable.rect_happy_topbar);
         topBarMessage.setTextColor(getResources().getColor(R.color.mainTextColor));
+
+        Button buttonBottom = findViewById(R.id.playing_now_button);
+        buttonBottom.setText(getResources().getString(R.string.play_now));
+        buttonBottom.setBackgroundResource(R.drawable.rect_happy_topbar);
+        buttonBottom.setTextColor(getResources().getColor(R.color.mainTextColor));
 
         // Create a list of words
         final ArrayList<MusicInfo> musicInfo = new ArrayList<>();
@@ -74,6 +80,15 @@ public class HappyActivity extends AppCompatActivity {
                 nextActivity.putExtra("albumName", albumName);
                 nextActivity.putExtra("albumID", imageId);
                 nextActivity.putExtra("position", position);
+                nextActivity.putExtra("last_activity", "happy");
+                startActivity(nextActivity);
+            }
+        });
+
+        buttonBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextActivity = new Intent(HappyActivity.this, ReproduceActivity.class);
                 nextActivity.putExtra("last_activity", "happy");
                 startActivity(nextActivity);
             }

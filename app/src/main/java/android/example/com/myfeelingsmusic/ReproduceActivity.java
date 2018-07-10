@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class ReproduceActivity extends AppCompatActivity {
         ImageView currentAlbumCoverImage = findViewById(R.id.cover_album_current);
         ImageView musicList = findViewById(R.id.list_music_items);
         final ImageView playPauseButton = findViewById(R.id.play_pause_buttom);
+        Button playlistButton = findViewById(R.id.playlist_button);
+        playlistButton.setText(getResources().getString(R.string.playlist_button));
 
         // Find the play and pause icons drawables in resources folder
         final Drawable pauseLines = getResources().getDrawable(R.drawable.music_player_pause_lines);
@@ -53,6 +56,29 @@ public class ReproduceActivity extends AppCompatActivity {
 
         // Return to the previous activity to show the music list
         musicList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String caller = getIntent().getStringExtra("last_activity");
+                if (caller.equals("happy")) {
+                    Intent intent = new Intent(ReproduceActivity.this, HappyActivity.class);
+                    ReproduceActivity.this.startActivity(intent);
+                }
+                if (caller.equals("sadness")) {
+                    Intent intent = new Intent(ReproduceActivity.this, SadnessActivity.class);
+                    ReproduceActivity.this.startActivity(intent);
+                }
+                if (caller.equals("angry")) {
+                    Intent intent = new Intent(ReproduceActivity.this, AngryActivity.class);
+                    ReproduceActivity.this.startActivity(intent);
+                }
+                if (caller.equals("inexpressive")) {
+                    Intent intent = new Intent(ReproduceActivity.this, InexpressiveActivity.class);
+                    ReproduceActivity.this.startActivity(intent);
+                }
+            }
+        });
+
+        playlistButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String caller = getIntent().getStringExtra("last_activity");

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,10 @@ public class AngryActivity extends AppCompatActivity {
         TextView topBarMessage = findViewById(R.id.header_category);
         topBarMessage.setText(getResources().getString(R.string.angry_topbar));
         topBarMessage.setBackgroundResource(R.drawable.rect_angry_topbar);
+
+        Button buttonBottom = findViewById(R.id.playing_now_button);
+        buttonBottom.setText(getResources().getString(R.string.play_now));
+        buttonBottom.setBackgroundResource(R.drawable.rect_angry_topbar);
 
         // Create a list of words
         final ArrayList<MusicInfo> musicInfo = new ArrayList<>();
@@ -72,6 +77,15 @@ public class AngryActivity extends AppCompatActivity {
                 nextActivity.putExtra("albumName", albumName);
                 nextActivity.putExtra("albumID", imageId);
                 nextActivity.putExtra("position", position);
+                nextActivity.putExtra("last_activity", "angry");
+                startActivity(nextActivity);
+            }
+        });
+
+        buttonBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextActivity = new Intent(AngryActivity.this, ReproduceActivity.class);
                 nextActivity.putExtra("last_activity", "angry");
                 startActivity(nextActivity);
             }
